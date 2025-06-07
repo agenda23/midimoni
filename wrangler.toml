@@ -6,4 +6,4 @@ command = "npm run build:pages"
 publish = "build/client"
 
 [build.environment_variables]
-NODE_VERSION = "18" 
+NODE_VERSION = "22" 
