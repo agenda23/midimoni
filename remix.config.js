@@ -10,6 +10,8 @@ export default {
   ignoredRouteFiles: ["**/.*"],
   // Cloudflare Pages向けの設定
   serverModuleFormat: "esm",
-  assetsBuildDirectory: "public/build",
+  serverBuildPath: "build/index.js",
+  assetsBuildDirectory: "public/build", 
   publicPath: "/build/",
+  serverPlatform: "neutral",
 }; 
