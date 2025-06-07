@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [],
+  "presentation": {
+    "echo": false,
+    "reveal": "never",
+    "focus": false,
+    "panel": "shared",
+    "showReuseMessage": false,
+    "clear": true,
+    "close": false
+  },
+  "options": {
+    "shell": {
+      "executable": "/usr/bin/zsh",
+      "args": ["-c"]
+    }
+  }
+} 
