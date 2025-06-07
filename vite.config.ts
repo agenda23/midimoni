@@ -12,6 +12,7 @@ export default defineConfig({
   plugins: [
     remix({
       ssr: false,
+      basename: "/",
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
@@ -25,6 +26,11 @@ export default defineConfig({
   build: {
     target: "esnext",
     minify: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
   define: {
     global: "globalThis",
