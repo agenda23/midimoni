@@ -13,6 +13,8 @@ export default defineConfig({
     remix({
       ssr: false,
       basename: "/",
+      buildDirectory: "build",
+      ignoredRouteFiles: ["**/.*"],
     }),
     tsconfigPaths(),
   ],
@@ -20,13 +22,20 @@ export default defineConfig({
     target: "esnext",
     minify: true,
     outDir: "build/client",
+    assetsDir: "assets",
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        assetFileNames: "assets/[name]-[hash][extname]",
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
       },
     },
   },
   define: {
     global: "globalThis",
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom"],
   },
 });
