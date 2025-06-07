@@ -11,6 +11,13 @@ declare module "@remix-run/node" {
 export default defineConfig({
   plugins: [
     remix({
+      future: {
+        v3_singleFetch: true,
+        v3_throwAbortReason: true,
+        v3_fetcherPersist: true,
+        v3_lazyRouteDiscovery: true,
+        v3_relativeSplatPath: true,
+      },
       ssr: false,
       basename: "/",
       buildDirectory: "build",
@@ -25,6 +32,7 @@ export default defineConfig({
     assetsDir: "assets",
     rollupOptions: {
       output: {
+        format: "es",
         manualChunks: undefined,
         assetFileNames: "assets/[name]-[hash][extname]",
         chunkFileNames: "assets/[name]-[hash].js",
@@ -37,5 +45,8 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ["react", "react-dom"],
+  },
+  esbuild: {
+    target: "esnext",
   },
 });
