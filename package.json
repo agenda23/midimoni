@@ -11,6 +11,8 @@
     "typecheck": "tsc",
     "pages:build": "npm run build:pages",
     "pages:dev": "npm run dev",
+    "pages:deploy": "npx wrangler pages deploy public",
+    "deploy": "npx wrangler pages deploy public",
     "preview": "vite preview",
     "postinstall": "esbuild --version || npm install esbuild@latest"
   },

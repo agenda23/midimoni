@@ -1,14 +1,5 @@
 name = "midimoni"
 compatibility_date = "2024-01-01"
 
-# Cloudflare Pages設定
-pages_build_output_dir = "public"
-
-# サーバーファイルの場所を指定  
-main = "build/index.js"
-
-[build]
-command = "npm run build:pages"
-
-[build.environment_variables]
-NODE_VERSION = "20" 
+# Cloudflare Pages専用設定
+pages_build_output_dir = "public" 
