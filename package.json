@@ -10,7 +10,8 @@
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc",
     "pages:build": "npm run build",
-    "pages:dev": "npm run dev"
+    "pages:dev": "npm run dev",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@remix-run/node": "^2.16.8",

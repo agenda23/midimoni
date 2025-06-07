@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import type { MetaFunction } from "@remix-run/node";
 import { MIDIVisualizer } from "~/components/MIDIVisualizer";
 import { MessageLog } from "~/components/MessageLog";
-import "~/types/webmidi";
 
 export const meta: MetaFunction = () => {
   return [
