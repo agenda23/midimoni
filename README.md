@@ -1,40 +1,72 @@
-# Welcome to Remix!
+# MIDI Monitor
 
-- 📖 [Remix docs](https://remix.run/docs)
+MIDIコントローラ入力モニターアプリケーション
 
-## Development
+## 概要
 
-Run the dev server:
+このアプリケーションは、PCでMIDIコントローラの入力をリアルタイムでモニターし、各インターフェイスの出力確認や他アプリ開発の助けにするためのツールです。
 
-```sh
+## 機能
+
+- **リアルタイムMIDI監視**: すべてのMIDIメッセージ（Note On/Off、CC、Program Changeなど）をリアルタイムで表示
+- **詳細情報表示**: ポート名、チャンネル、値などの詳細情報を表示
+- **複数デバイス対応**: 複数MIDIポート接続時は、1台選択してモニター可能
+- **デュアル表示**: テキストログとグラフィカルUIの両方を搭載
+  - テキストログ: 上から流れるメッセージログ
+  - グラフィカルUI: ノブは円形ゲージ、ボタンは光る四角ボタン
+- **フィルタリング機能**: チャンネル・メッセージタイプ別でフィルタリング
+- **ログ保存**: メッセージをJSON形式で保存可能
+- **履歴保持**: 古い情報も消さずにスクロール可能
+
+## 技術スタック
+
+- **フレームワーク**: Remix (React-based)
+- **言語**: TypeScript
+- **API**: WebMIDI API
+- **スタイリング**: Tailwind CSS
+- **対応ブラウザ**: WebMIDI API対応ブラウザ（Chrome、Edge、Operaなど）
+
+## 対応環境
+
+- **OS**: Mac/Windows
+- **ブラウザ**: WebMIDI API対応のもの（Chrome、Edge、Opera推奨）
+- **ネット接続**: 必要（オンライン環境前提）
+
+## 開発・実行
+
+### 開発環境での実行
+
+```bash
 npm run dev
 ```
 
-## Deployment
+### ビルド
 
-First, build your app for production:
-
-```sh
+```bash
 npm run build
 ```
 
-Then run the app in production mode:
+### 本番環境での実行
 
-```sh
+```bash
 npm start
 ```
 
-Now you'll need to pick a host to deploy it to.
+## 使用方法
 
-### DIY
+1. WebMIDI API対応ブラウザでアプリケーションにアクセス
+2. MIDIデバイスをPCに接続
+3. デバイス選択ドロップダウンからMIDIデバイスを選択
+4. MIDIコントローラを操作してメッセージを確認
+5. 必要に応じてチャンネルやメッセージタイプでフィルタリング
+6. ログをJSON形式で出力可能
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+## 注意事項
 
-Make sure to deploy the output of `npm run build`
+- WebMIDI APIはHTTPS環境またはlocalhostでのみ動作します
+- 一部のブラウザではWebMIDI APIがサポートされていません
+- MIDIデバイスの接続にはブラウザの許可が必要です
 
-- `build/server`
-- `build/client`
+## ライセンス
 
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+MIT License
